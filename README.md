@@ -164,7 +164,7 @@ Leave the terminal open. It will run all tasks automatically.
 
 ### Day 3:
 - [ ] Run agent → Option 2 (message 3 executive recruiters)
-- [ ] Run agent → Option 4 (message 5 IAF network contacts)
+- [ ] Run agent → Option 4 (message 5 network contacts)
 
 ### Day 7:
 - [ ] Run agent → Option 7 (generate all 12 LinkedIn posts at once)
