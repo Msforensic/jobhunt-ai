@@ -14,10 +14,10 @@
 
 Generic job tools are built for software engineers applying to 200 companies. Senior cybersecurity leaders face a completely different challenge:
 
-- **Defence-to-private translation gap** — 20 years of IAF SOC leadership doesn't map cleanly to private sector JDs
+- **Defence-to-private translation gap** — 20 years of Defence leadership doesn't map cleanly to private sector JDs
 - **Keyword mismatch** — ATS systems reject resumes that don't mirror the exact JD language
 - **No outreach templates** — Cold messages to CISOs and Big 4 partners require a very different tone than junior job applications
-- **Invisible expertise** — Elsevier Q1 publications and DFIR lab accreditations mean nothing if they're buried on page 2
+- **Invisible expertise** — Elsevier Q1 publications and DFIR lab accreditations mean nothing if they're buried improperly.
 
 **JobHunt AI solves every one of these problems** — using Claude AI to translate your defence credentials into private sector language, tailor every application, and automate every repetitive communication.
 
@@ -181,13 +181,13 @@ python -m jobhunt_ai schedule
 
 ## 👤 Built By
 
-**Dr. Madhuresh Shukla** — Cybersecurity Executive, 20+ years Indian Air Force
+**Dr. Madhuresh Shukla** — Cybersecurity Executive, 20 years Indian Air Force
 
-- Built and led a 24x7 SOC and accredited DFIR laboratory from scratch (Rs. 80 Crore programme)
+- Built and led a 24x7 SOC and accredited DFIR laboratory from scratch.
 - Led 1,000+ high-severity cyber investigations (99.8% success rate)
 - Published: [Elsevier Q1 Journal, 2025](https://www.sciencedirect.com) | Scopus Indexed, 2024
 - PhD Candidate, Cybersecurity — Lovely Professional University
-- Currently transitioning from IAF to private sector — **this tool is what I use in my own job search**
+- Currently transitioning from Defence to private sector — **this tool is what I use in my own job search**
 
 > *"I built this because every AI job tool I found was designed for software engineers applying to 200 companies. I needed something that understood what 'led 1,000 DFIR investigations' means in a CISO interview, and could translate 20 years of defence operations into language a Big 4 partner would hire for."*
 
