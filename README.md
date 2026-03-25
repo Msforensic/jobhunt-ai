@@ -1,188 +1,213 @@
-# 🤖 AI Job Hunting Agent — Dr. Madhuresh Shukla
-## Complete Automation System for Cybersecurity Job Search
+# 🛡️ JobHunt AI — AI Career Agent for Senior Cybersecurity Professionals
+
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Powered by Claude](https://img.shields.io/badge/AI-Claude%20Sonnet-orange.svg)](https://anthropic.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Domain: Cybersecurity](https://img.shields.io/badge/domain-cybersecurity-red.svg)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+> **The only AI job hunting agent built specifically for senior cybersecurity professionals — CISO, SOC Head, DFIR Lead — transitioning from government and defence to the private sector in India.**
 
 ---
 
-## WHAT THIS AGENT DOES
+## 🎯 The Problem This Solves
 
-This AI agent automates your entire job hunting process using Claude AI:
+Generic job tools are built for software engineers applying to 200 companies. Senior cybersecurity leaders face a completely different challenge:
 
-| Task | What the agent does |
-|------|---------------------|
-| Resume tailoring | Reads any job description and rewrites your summary + bullets to match |
-| Recruiter outreach | Generates personalised messages for each recruiter |
-| Hiring manager DMs | Writes direct, senior-to-senior outreach messages |
-| Network messages | Crafts warm reconnect messages to IAF/govt contacts |
-| Follow-up messages | Automatically flags and drafts follow-ups when due |
-| Thank-you notes | Post-interview thank-you in 2 minutes |
-| LinkedIn posts | Generates 12 weeks of content in one go |
-| Daily reports | Shows your full pipeline status every morning |
-| AI pipeline analysis | Claude reviews your applications and gives strategic advice |
-| Interview prep | Company-specific research + likely questions + your answer frameworks |
-| Salary negotiation | Word-for-word negotiation scripts for specific offers |
-| Scheduler | Runs Monday tasks, daily check-ins, Friday reviews automatically |
+- **Defence-to-private translation gap** — 20 years of IAF SOC leadership doesn't map cleanly to private sector JDs
+- **Keyword mismatch** — ATS systems reject resumes that don't mirror the exact JD language
+- **No outreach templates** — Cold messages to CISOs and Big 4 partners require a very different tone than junior job applications
+- **Invisible expertise** — Elsevier Q1 publications and DFIR lab accreditations mean nothing if they're buried on page 2
+
+**JobHunt AI solves every one of these problems** — using Claude AI to translate your defence credentials into private sector language, tailor every application, and automate every repetitive communication.
 
 ---
 
-## SETUP — 5 MINUTES
+## ✨ What Makes This Different
 
-### Step 1: Install Python (if not already installed)
-Download from: https://python.org/downloads
-Choose Python 3.10 or higher.
+| Generic AI Job Tools | JobHunt AI |
+|---------------------|------------|
+| Built for software engineers | Built for cybersecurity leaders |
+| Generic resume rewriting | NIST/ISO 27001/MITRE ATT&CK keyword matching |
+| Mass application automation | Precision targeting — 5 tailored > 50 generic |
+| No domain expertise | Deep SOC/DFIR/GRC context baked in |
+| Replaces human judgment | Augments senior professional strategy |
 
-### Step 2: Install required packages
-Open Terminal (Mac/Linux) or Command Prompt (Windows) and run:
+**The core insight:** At CISO and SOC Head level, 70% of roles are filled before public posting — through referrals and direct outreach. This agent optimises for that reality.
+
+---
+
+## 🚀 Features
+
+### 📄 AI Resume Tailoring
+Paste any job description → Claude rewrites your professional summary and key bullets to mirror the JD's exact keywords — SIEM, EDR, MITRE ATT&CK, ISO 27001, threat hunting — whatever they use.
+
+### ✉️ Personalised Outreach Generation
+- **Recruiter messages** — Korn Ferry, Michael Page, Randstad India style outreach
+- **Hiring manager DMs** — Direct, peer-to-peer tone for CISOs and security directors
+- **Network reconnects** — Warm messages to IAF/govt colleagues now in private sector
+- **Post-interview thank-you** — 3-sentence notes that stand out
+
+### 📝 12-Week LinkedIn Content Calendar
+Generate a full quarter of cybersecurity thought leadership posts — DFIR lessons, DPDPA analysis, malware research insights, SOC-building advice — all in your voice, ready to publish.
+
+### 📊 Application Pipeline Tracker
+CSV-based tracker with automated follow-up reminders. Never let a promising application go cold again.
+
+### 🤖 AI Pipeline Analysis
+Claude reviews your entire application history and gives you weekly strategic advice — which channels are working, which companies are most promising, what to change.
+
+### 🎯 Interview Preparation
+Company-specific research + likely questions + answer frameworks using your actual career numbers. Built for the "no private sector experience" objection every defence veteran faces.
+
+### 💰 Salary Negotiation Scripts
+Word-for-word negotiation scripts calibrated to Indian cybersecurity market rates — Rs. 35–65 LPA for senior roles.
+
+### 🗓️ Automated Scheduler
+Monday morning: LinkedIn post + weekly plan. Daily: follow-up reminders. Friday: AI pipeline review. All automated.
+
+---
+
+## 🧱 Architecture
+
 ```
-pip install anthropic schedule pandas openpyxl
+JobHunt AI
+│
+├── Core Orchestrator (agent.py)
+│   └── Anthropic Claude Sonnet API
+│
+├── Sub-Agents
+│   ├── ResumeAgent        — JD analysis + keyword matching + tailoring
+│   ├── OutreachAgent      — 5 message types, context-aware generation
+│   ├── ContentAgent       — 12-week LinkedIn post calendar
+│   ├── TrackerAgent       — CSV pipeline + follow-up logic + AI analysis
+│   └── InterviewAgent     — Company research + prep + negotiation
+│
+├── Scheduler              — Automated daily/weekly task runner
+├── Config (YAML)          — Candidate profile + API keys
+└── Data (CSV)             — Applications, contacts, posts, logs
 ```
 
-### Step 3: Get your Anthropic API key
-1. Go to: https://console.anthropic.com
-2. Sign up (free account gives $5 credits — enough for ~500 messages)
-3. Click "API Keys" → "Create Key"
-4. Copy the key (starts with sk-ant-...)
+**Why Python + Claude API (not a web framework)?**
 
-### Step 4: Add your API key to the agent
-Open `agent.py` in any text editor (Notepad, VS Code, etc.)
-Find this line near the top:
-```python
-"api_key": "YOUR_ANTHROPIC_API_KEY_HERE",
-```
-Replace `YOUR_ANTHROPIC_API_KEY_HERE` with your actual key.
+This is intentionally a command-line agent, not a web app. Senior professionals spend their time in email and terminal — not browser dashboards. The CLI design means zero dependencies on external services, runs completely locally, and costs ~Rs. 200/month vs. Rs. 2,000+/month for SaaS alternatives.
 
-### Step 5: Run the agent
+---
+
+## ⚙️ Quick Start
+
+```bash
+# 1. Clone
+git clone https://github.com/Msforensic/jobhunt-ai.git
+cd jobhunt-ai
+
+# 2. Install
+pip install -r requirements.txt
+
+# 3. Try the demo (no API key needed)
+python demo.py
+
+# 4. Configure
+cp config.example.yaml config.yaml
+# Add your Anthropic API key (free at console.anthropic.com)
+
+# 5. Run
+python -m jobhunt_ai
 ```
-python agent.py
+
+**Cost:** API calls cost approximately Rs. 200–300/month for daily use. Free $5 credits at signup cover 2–3 weeks.
+
+---
+
+## 📖 CLI Usage
+
+```bash
+# Tailor resume to a specific JD
+python -m jobhunt_ai tailor --company "Deloitte India" --role "DFIR Manager" --jd-file jd.txt
+
+# Generate outreach messages
+python -m jobhunt_ai outreach recruiter --name "Kiran Mehta" --company "Michael Page"
+python -m jobhunt_ai outreach manager --name "Rahul Sharma" --company "HSBC GCC" --role "SOC Director"
+
+# Generate LinkedIn posts
+python -m jobhunt_ai post --week 1          # Single post
+python -m jobhunt_ai post --all             # All 12 weeks
+
+# Track applications
+python -m jobhunt_ai track add --company "PwC India" --role "Cyber Risk Manager" --location "Bengaluru" --platform "LinkedIn"
+python -m jobhunt_ai track report           # Daily pipeline report
+python -m jobhunt_ai track followups        # What needs follow-up today
+python -m jobhunt_ai track analyse          # AI strategic advice
+
+# Interview prep
+python -m jobhunt_ai interview --company "EY India" --role "GRC Consultant"
+
+# Start automated scheduler
+python -m jobhunt_ai schedule
 ```
 
 ---
 
-## DAILY USAGE — How to use it every day
+## 🎯 Who This Is For
 
-### Morning routine (5 minutes):
-1. Run `python agent.py`
-2. Choose option 9 — Daily pipeline report
-3. Choose option 13 — Check follow-ups due
-4. Send any flagged follow-ups
+**Ideal user:**
+- 10–25 years in cybersecurity (government, defence, or large enterprise)
+- Targeting: CISO, Head of Security Operations, SOC Director, DFIR Lead, GRC Manager
+- Location: India (language and market context tuned for Indian private sector)
+- Transitioning from public to private sector
 
-### When you find a job to apply for:
-1. Choose option 1 — Tailor resume (paste the JD)
-2. Copy the tailored summary into your resume
-3. Apply on the platform
-4. Choose option 8 — Add to tracker
-5. If you found the hiring manager: Choose option 3 — Generate their message
-
-### Monday morning (10 minutes):
-1. Choose option 14 — Run Monday tasks
-2. This generates your LinkedIn post + weekly plan automatically
-
-### Before an interview:
-1. Choose option 11 — Generate interview prep
-2. Review the company research + likely questions
-3. Practise your answers using the frameworks provided
-
-### After receiving an offer:
-1. Choose option 12 — Salary negotiation script
-2. Follow the script word for word
+**Not the right tool for:**
+- Entry-level or junior candidates
+- Mass application automation ("spray and pray")
+- Non-cybersecurity domains
 
 ---
 
-## FILE STRUCTURE
+## 🗺️ Roadmap
 
-```
-job_agent/
-├── agent.py              ← Main agent (run this)
-├── requirements.txt      ← Python packages needed
-├── README.md             ← This file
-└── data/                 ← All your data (auto-created)
-    ├── applications.csv  ← Application tracker
-    ├── contacts.csv      ← Network contacts
-    ├── companies.csv     ← Target companies
-    ├── linkedin_posts.csv ← Generated posts
-    ├── agent_log.txt     ← Activity log
-    ├── resume_*.txt      ← Tailored resumes per role
-    ├── post_week*.txt    ← LinkedIn posts per week
-    └── interview_prep_*.txt ← Interview prep per company
-```
+- [x] Core agent with 15 functions
+- [x] CLI with full argument support
+- [x] CSV pipeline tracker with automated reminders
+- [x] 12-week LinkedIn content calendar
+- [x] Automated scheduler
+- [ ] **Cybersecurity job scraper** — auto-fetch from Naukri, LinkedIn, iimjobs filtered for security roles
+- [ ] **MITRE ATT&CK role mapper** — map your experience to specific ATT&CK domains and suggest roles
+- [ ] **Skill gap analyser** — compare your profile to JD requirements and suggest certifications
+- [ ] **Phishing job detector** — flag suspicious job postings using NLP (a natural fit for a DFIR expert)
+- [ ] **Streamlit dashboard** — visual pipeline and analytics view
+- [ ] **WhatsApp reminder integration** — push follow-up reminders to phone
 
 ---
 
-## COST ESTIMATE
+## 👤 Built By
 
-Using Claude Sonnet via API:
-- Each resume tailoring: ~Rs. 2–3
-- Each message generated: ~Re. 1
-- Each LinkedIn post: ~Rs. 2
-- Daily report: ~Re. 0.50
-- Full month of usage: ~Rs. 200–300 total
+**Dr. Madhuresh Shukla** — Cybersecurity Executive, 20+ years Indian Air Force
 
-Free Anthropic credits ($5) will last approximately 2–3 weeks of daily use.
+- Built and led a 24x7 SOC and accredited DFIR laboratory from scratch (Rs. 80 Crore programme)
+- Led 1,000+ high-severity cyber investigations (99.8% success rate)
+- Published: [Elsevier Q1 Journal, 2025](https://www.sciencedirect.com) | Scopus Indexed, 2024
+- PhD Candidate, Cybersecurity — Lovely Professional University
+- Currently transitioning from IAF to private sector — **this tool is what I use in my own job search**
 
----
-
-## ADVANCED: Automated Scheduler
-
-To run the agent automatically every day (without opening it manually):
-
-**Option A — Run manually each morning:**
-Just open Terminal and type `python agent.py` each morning.
-
-**Option B — Windows Task Scheduler:**
-1. Open Task Scheduler
-2. Create Basic Task → "Job Agent Daily"
-3. Trigger: Daily at 8:30 AM
-4. Action: Start Program → python.exe
-5. Arguments: `C:\path\to\job_agent\agent.py --schedule`
-
-**Option C — Mac/Linux Cron:**
-```
-crontab -e
-# Add this line (runs at 8:30 AM every weekday):
-30 8 * * 1-5 cd /path/to/job_agent && python agent.py --schedule
-```
-
-**Option D — Keep it running in background:**
-Choose option 15 in the menu — "Start automated scheduler"
-Leave the terminal open. It will run all tasks automatically.
+> *"I built this because every AI job tool I found was designed for software engineers applying to 200 companies. I needed something that understood what 'led 1,000 DFIR investigations' means in a CISO interview, and could translate 20 years of defence operations into language a Big 4 partner would hire for."*
 
 ---
 
-## WHAT TO DO THIS WEEK
+## 🤝 Contributing
 
-### Day 1 (Today):
-- [ ] Complete setup (steps 1–5 above)
-- [ ] Run agent → Option 9 (daily report)
-- [ ] Run agent → Option 6 (generate Week 1 LinkedIn post)
-- [ ] Publish that post on LinkedIn
+Contributions welcome — especially from:
+- Cybersecurity professionals who want domain-specific features
+- Python developers who want to add the job scraper or dashboard
+- Defence veterans who can test the India-market accuracy
 
-### Day 2:
-- [ ] Find 3 job descriptions online
-- [ ] Run agent → Option 1 for each (tailor resume)
-- [ ] Apply to each role
-- [ ] Run agent → Option 8 to track each application
-- [ ] Find hiring managers → Run agent → Option 3
-
-### Day 3:
-- [ ] Run agent → Option 2 (message 3 executive recruiters)
-- [ ] Run agent → Option 4 (message 5 network contacts)
-
-### Day 7:
-- [ ] Run agent → Option 7 (generate all 12 LinkedIn posts at once)
-- [ ] Schedule them in LinkedIn's native scheduler
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-## SUPPORT
+## 📄 License
 
-If you get an error, check:
-1. Your API key is correct in agent.py
-2. You have internet connection
-3. You ran `pip install anthropic schedule pandas openpyxl`
-
-For API issues: https://docs.anthropic.com
-For Python issues: https://python.org/doc
+MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
-*Built specifically for Dr. Madhuresh Shukla's cybersecurity job search transition.*
-*Your profile data is pre-loaded — the agent knows your full background and generates content specific to you.*
+*If this helps your job search, please ⭐ star it and share with other cybersecurity professionals making the transition.*
